@@ -44,17 +44,18 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
-			<artifactId>querydsl-apt</artifactId>
-			<version>3.6.7</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.mysema.querydsl</groupId>
-			<artifactId>querydsl-jpa</artifactId>
-			<version>3.6.7</version>
-		</dependency>
+			<dependency>
+	        <groupId>com.querydsl</groupId>
+	        <artifactId>querydsl-core</artifactId>
+	        </dependency>
+	    <dependency> 
+	        <groupId>com.querydsl</groupId>
+	        <artifactId>querydsl-apt</artifactId> 
+	        </dependency>
+	    <dependency> 
+	        <groupId>com.querydsl</groupId>
+	        <artifactId>querydsl-jpa</artifactId> 
+	        </dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,8 +85,9 @@
 							<goal>process</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>src/main/java/pe/gob/midis/dgfo/dof/querydsl</outputDirectory>
+							<outputDirectory>querydsl</outputDirectory>
 							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+							<processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
 						</configuration>
 					</execution>
 				</executions>

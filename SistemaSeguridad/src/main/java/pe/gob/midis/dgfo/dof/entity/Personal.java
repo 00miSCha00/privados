@@ -34,7 +34,7 @@ public class Personal implements Serializable {
 
 	//bi-directional many-to-one association to Unidadnegocio
 	@ManyToOne
-	private Unidadnegocio unidadnegocio;
+	private UnidadNegocio unidadnegocio;
 
 	//bi-directional many-to-one association to Usuario
 	@OneToMany(mappedBy="personal")
@@ -99,11 +99,11 @@ public class Personal implements Serializable {
 		this.persona = persona;
 	}
 
-	public Unidadnegocio getUnidadnegocio() {
+	public UnidadNegocio getUnidadnegocio() {
 		return this.unidadnegocio;
 	}
 
-	public void setUnidadnegocio(Unidadnegocio unidadnegocio) {
+	public void setUnidadnegocio(UnidadNegocio unidadnegocio) {
 		this.unidadnegocio = unidadnegocio;
 	}
 

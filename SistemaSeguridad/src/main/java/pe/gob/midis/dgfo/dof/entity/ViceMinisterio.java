@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Viceministerio.findAll", query="SELECT v FROM Viceministerio v")
-public class Viceministerio implements Serializable {
+public class ViceMinisterio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -28,7 +28,7 @@ public class Viceministerio implements Serializable {
 	@JoinColumn(name="idInstitucion")
 	private Institucion institucion;
 
-	public Viceministerio() {
+	public ViceMinisterio() {
 	}
 
 	public int getIdViceMinisterio() {

@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQuery(name="Unidadnegocio.findAll", query="SELECT u FROM Unidadnegocio u")
-public class Unidadnegocio implements Serializable {
+public class UnidadNegocio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -33,7 +33,7 @@ public class Unidadnegocio implements Serializable {
 	@JoinColumn(name="idInstitucion")
 	private Institucion institucion;
 
-	public Unidadnegocio() {
+	public UnidadNegocio() {
 	}
 
 	public int getIdUnidadNegocio() {

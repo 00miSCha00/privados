@@ -1,22 +1,25 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Personal;
 import pe.gob.midis.dgfo.dof.entity.Usuario;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+/**
+ * QPersonal is a Querydsl query type for Personal
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QPersonal extends EntityPathBase<Personal> {
 
     private static final long serialVersionUID = 107114623L;
@@ -48,18 +51,18 @@ public class QPersonal extends EntityPathBase<Personal> {
     }
 
     public QPersonal(Path<? extends Personal> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QPersonal(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QPersonal(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QPersonal(PathMetadata<?> metadata, PathInits inits) {
+    public QPersonal(PathMetadata metadata, PathInits inits) {
         this(Personal.class, metadata, inits);
     }
 
-    public QPersonal(Class<? extends Personal> type, PathMetadata<?> metadata, PathInits inits) {
+    public QPersonal(Class<? extends Personal> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.persona = inits.isInitialized("persona") ? new QPersona(forProperty("persona")) : null;
         this.unidadnegocio = inits.isInitialized("unidadnegocio") ? new QUnidadnegocio(forProperty("unidadnegocio"), inits.get("unidadnegocio")) : null;

@@ -1,24 +1,27 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Direccion;
 import pe.gob.midis.dgfo.dof.entity.Institucion;
-import pe.gob.midis.dgfo.dof.entity.Unidadnegocio;
-import pe.gob.midis.dgfo.dof.entity.Viceministerio;
+import pe.gob.midis.dgfo.dof.entity.UnidadNegocio;
+import pe.gob.midis.dgfo.dof.entity.ViceMinisterio;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+/**
+ * QInstitucion is a Querydsl query type for Institucion
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QInstitucion extends EntityPathBase<Institucion> {
 
     private static final long serialVersionUID = 1206518986L;
@@ -31,9 +34,9 @@ public class QInstitucion extends EntityPathBase<Institucion> {
 
     public final NumberPath<Integer> idInstitucion = createNumber("idInstitucion", Integer.class);
 
-    public final ListPath<Unidadnegocio, QUnidadnegocio> unidadnegocios = this.<Unidadnegocio, QUnidadnegocio>createList("unidadnegocios", Unidadnegocio.class, QUnidadnegocio.class, PathInits.DIRECT2);
+    public final ListPath<UnidadNegocio, QUnidadnegocio> unidadnegocios = this.<UnidadNegocio, QUnidadnegocio>createList("unidadnegocios", UnidadNegocio.class, QUnidadnegocio.class, PathInits.DIRECT2);
 
-    public final ListPath<Viceministerio, QViceministerio> viceministerios = this.<Viceministerio, QViceministerio>createList("viceministerios", Viceministerio.class, QViceministerio.class, PathInits.DIRECT2);
+    public final ListPath<ViceMinisterio, QViceministerio> viceministerios = this.<ViceMinisterio, QViceministerio>createList("viceministerios", ViceMinisterio.class, QViceministerio.class, PathInits.DIRECT2);
 
     public QInstitucion(String variable) {
         super(Institucion.class, forVariable(variable));
@@ -43,7 +46,7 @@ public class QInstitucion extends EntityPathBase<Institucion> {
         super(path.getType(), path.getMetadata());
     }
 
-    public QInstitucion(PathMetadata<?> metadata) {
+    public QInstitucion(PathMetadata metadata) {
         super(Institucion.class, metadata);
     }
 

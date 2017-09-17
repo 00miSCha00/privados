@@ -1,22 +1,25 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Menu;
 import pe.gob.midis.dgfo.dof.entity.Opcion;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+/**
+ * QMenu is a Querydsl query type for Menu
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QMenu extends EntityPathBase<Menu> {
 
     private static final long serialVersionUID = -1808771298L;
@@ -38,18 +41,18 @@ public class QMenu extends EntityPathBase<Menu> {
     }
 
     public QMenu(Path<? extends Menu> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QMenu(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QMenu(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QMenu(PathMetadata<?> metadata, PathInits inits) {
+    public QMenu(PathMetadata metadata, PathInits inits) {
         this(Menu.class, metadata, inits);
     }
 
-    public QMenu(Class<? extends Menu> type, PathMetadata<?> metadata, PathInits inits) {
+    public QMenu(Class<? extends Menu> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.modulo = inits.isInitialized("modulo") ? new QModulo(forProperty("modulo"), inits.get("modulo")) : null;
     }

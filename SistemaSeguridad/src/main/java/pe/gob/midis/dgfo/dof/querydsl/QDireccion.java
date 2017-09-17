@@ -1,22 +1,27 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Direccion;
-import pe.gob.midis.dgfo.dof.entity.Unidadnegocio;
+import pe.gob.midis.dgfo.dof.entity.UnidadNegocio;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+
+
+/**
+ * QDireccion is a Querydsl query type for Direccion
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QDireccion extends EntityPathBase<Direccion> {
 
     private static final long serialVersionUID = 1504266961L;
@@ -31,7 +36,7 @@ public class QDireccion extends EntityPathBase<Direccion> {
 
     public final QInstitucion institucion;
 
-    public final ListPath<Unidadnegocio, QUnidadnegocio> unidadnegocios = this.<Unidadnegocio, QUnidadnegocio>createList("unidadnegocios", Unidadnegocio.class, QUnidadnegocio.class, PathInits.DIRECT2);
+    public final ListPath<UnidadNegocio, QUnidadnegocio> unidadnegocios = this.<UnidadNegocio, QUnidadnegocio>createList("unidadnegocios", UnidadNegocio.class, QUnidadnegocio.class, PathInits.DIRECT2);
 
     public final QViceministerio viceministerio;
 
@@ -40,18 +45,18 @@ public class QDireccion extends EntityPathBase<Direccion> {
     }
 
     public QDireccion(Path<? extends Direccion> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QDireccion(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QDireccion(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QDireccion(PathMetadata<?> metadata, PathInits inits) {
+    public QDireccion(PathMetadata metadata, PathInits inits) {
         this(Direccion.class, metadata, inits);
     }
 
-    public QDireccion(Class<? extends Direccion> type, PathMetadata<?> metadata, PathInits inits) {
+    public QDireccion(Class<? extends Direccion> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.institucion = inits.isInitialized("institucion") ? new QInstitucion(forProperty("institucion")) : null;
         this.viceministerio = inits.isInitialized("viceministerio") ? new QViceministerio(forProperty("viceministerio"), inits.get("viceministerio")) : null;

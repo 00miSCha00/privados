@@ -1,22 +1,25 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Persona;
 import pe.gob.midis.dgfo.dof.entity.Personal;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+/**
+ * QPersona is a Querydsl query type for Persona
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QPersona extends EntityPathBase<Persona> {
 
     private static final long serialVersionUID = -2074754675L;
@@ -37,7 +40,7 @@ public class QPersona extends EntityPathBase<Persona> {
         super(path.getType(), path.getMetadata());
     }
 
-    public QPersona(PathMetadata<?> metadata) {
+    public QPersona(PathMetadata metadata) {
         super(Persona.class, metadata);
     }
 

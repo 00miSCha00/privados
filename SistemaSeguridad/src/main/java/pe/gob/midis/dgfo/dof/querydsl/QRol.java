@@ -1,23 +1,26 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.ListPath;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
-import com.mysema.query.types.path.StringPath;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.ListPath;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
+import com.querydsl.core.types.dsl.StringPath;
 
 import pe.gob.midis.dgfo.dof.entity.Permiso;
 import pe.gob.midis.dgfo.dof.entity.Rol;
-import pe.gob.midis.dgfo.dof.entity.Rolperfil;
+import pe.gob.midis.dgfo.dof.entity.RolPerfil;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
+/**
+ * QRol is a Querydsl query type for Rol
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
 public class QRol extends EntityPathBase<Rol> {
 
     private static final long serialVersionUID = -58342352L;
@@ -32,7 +35,7 @@ public class QRol extends EntityPathBase<Rol> {
 
     public final ListPath<Permiso, QPermiso> permisos = this.<Permiso, QPermiso>createList("permisos", Permiso.class, QPermiso.class, PathInits.DIRECT2);
 
-    public final ListPath<Rolperfil, QRolperfil> rolperfils = this.<Rolperfil, QRolperfil>createList("rolperfils", Rolperfil.class, QRolperfil.class, PathInits.DIRECT2);
+    public final ListPath<RolPerfil, QRolperfil> rolperfils = this.<RolPerfil, QRolperfil>createList("rolperfils", RolPerfil.class, QRolperfil.class, PathInits.DIRECT2);
 
     public final QSistema sistema;
 
@@ -41,18 +44,18 @@ public class QRol extends EntityPathBase<Rol> {
     }
 
     public QRol(Path<? extends Rol> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QRol(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QRol(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QRol(PathMetadata<?> metadata, PathInits inits) {
+    public QRol(PathMetadata metadata, PathInits inits) {
         this(Rol.class, metadata, inits);
     }
 
-    public QRol(Class<? extends Rol> type, PathMetadata<?> metadata, PathInits inits) {
+    public QRol(Class<? extends Rol> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.sistema = inits.isInitialized("sistema") ? new QSistema(forProperty("sistema")) : null;
     }

@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @NamedQuery(name="Rolperfil.findAll", query="SELECT r FROM Rolperfil r")
-public class Rolperfil implements Serializable {
+public class RolPerfil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -26,7 +26,7 @@ public class Rolperfil implements Serializable {
 	@JoinColumn(name="idRolSistema")
 	private Rol rol;
 
-	public Rolperfil() {
+	public RolPerfil() {
 	}
 
 	public int getIdRolPerfil() {

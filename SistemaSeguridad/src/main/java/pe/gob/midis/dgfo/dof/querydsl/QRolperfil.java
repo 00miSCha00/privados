@@ -1,20 +1,23 @@
 package pe.gob.midis.dgfo.dof.querydsl;
 
-import static com.mysema.query.types.PathMetadataFactory.forVariable;
+import static com.querydsl.core.types.PathMetadataFactory.forVariable;
 
 import javax.annotation.Generated;
 
-import com.mysema.query.types.Path;
-import com.mysema.query.types.PathMetadata;
-import com.mysema.query.types.path.EntityPathBase;
-import com.mysema.query.types.path.NumberPath;
-import com.mysema.query.types.path.PathInits;
+import com.querydsl.core.types.Path;
+import com.querydsl.core.types.PathMetadata;
+import com.querydsl.core.types.dsl.EntityPathBase;
+import com.querydsl.core.types.dsl.NumberPath;
+import com.querydsl.core.types.dsl.PathInits;
 
-import pe.gob.midis.dgfo.dof.entity.Rolperfil;
+import pe.gob.midis.dgfo.dof.entity.RolPerfil;
 
 
-@Generated("com.mysema.query.codegen.EntitySerializer")
-public class QRolperfil extends EntityPathBase<Rolperfil> {
+/**
+ * QRolperfil is a Querydsl query type for Rolperfil
+ */
+@Generated("com.querydsl.codegen.EntitySerializer")
+public class QRolperfil extends EntityPathBase<RolPerfil> {
 
     private static final long serialVersionUID = -1171174916L;
 
@@ -29,22 +32,22 @@ public class QRolperfil extends EntityPathBase<Rolperfil> {
     public final QRol rol;
 
     public QRolperfil(String variable) {
-        this(Rolperfil.class, forVariable(variable), INITS);
+        this(RolPerfil.class, forVariable(variable), INITS);
     }
 
-    public QRolperfil(Path<? extends Rolperfil> path) {
-        this(path.getType(), path.getMetadata(), path.getMetadata().isRoot() ? INITS : PathInits.DEFAULT);
+    public QRolperfil(Path<? extends RolPerfil> path) {
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public QRolperfil(PathMetadata<?> metadata) {
-        this(metadata, metadata.isRoot() ? INITS : PathInits.DEFAULT);
+    public QRolperfil(PathMetadata metadata) {
+        this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public QRolperfil(PathMetadata<?> metadata, PathInits inits) {
-        this(Rolperfil.class, metadata, inits);
+    public QRolperfil(PathMetadata metadata, PathInits inits) {
+        this(RolPerfil.class, metadata, inits);
     }
 
-    public QRolperfil(Class<? extends Rolperfil> type, PathMetadata<?> metadata, PathInits inits) {
+    public QRolperfil(Class<? extends RolPerfil> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.perfil = inits.isInitialized("perfil") ? new QPerfil(forProperty("perfil"), inits.get("perfil")) : null;
         this.rol = inits.isInitialized("rol") ? new QRol(forProperty("rol"), inits.get("rol")) : null;

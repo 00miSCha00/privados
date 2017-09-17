@@ -30,7 +30,7 @@ public class Rol implements Serializable {
 
 	//bi-directional many-to-one association to Rolperfil
 	@OneToMany(mappedBy="rol")
-	private List<Rolperfil> rolperfils;
+	private List<RolPerfil> rolperfils;
 
 	public Rol() {
 	}
@@ -81,22 +81,22 @@ public class Rol implements Serializable {
 		this.sistema = sistema;
 	}
 
-	public List<Rolperfil> getRolperfils() {
+	public List<RolPerfil> getRolperfils() {
 		return this.rolperfils;
 	}
 
-	public void setRolperfils(List<Rolperfil> rolperfils) {
+	public void setRolperfils(List<RolPerfil> rolperfils) {
 		this.rolperfils = rolperfils;
 	}
 
-	public Rolperfil addRolperfil(Rolperfil rolperfil) {
+	public RolPerfil addRolperfil(RolPerfil rolperfil) {
 		getRolperfils().add(rolperfil);
 		rolperfil.setRol(this);
 
 		return rolperfil;
 	}
 
-	public Rolperfil removeRolperfil(Rolperfil rolperfil) {
+	public RolPerfil removeRolperfil(RolPerfil rolperfil) {
 		getRolperfils().remove(rolperfil);
 		rolperfil.setRol(null);
 

@@ -25,11 +25,11 @@ public class Institucion implements Serializable {
 
 	//bi-directional many-to-one association to Unidadnegocio
 	@OneToMany(mappedBy="institucion")
-	private List<Unidadnegocio> unidadnegocios;
+	private List<UnidadNegocio> unidadnegocios;
 
 	//bi-directional many-to-one association to Viceministerio
 	@OneToMany(mappedBy="institucion")
-	private List<Viceministerio> viceministerios;
+	private List<ViceMinisterio> viceministerios;
 
 	public Institucion() {
 	}
@@ -72,44 +72,44 @@ public class Institucion implements Serializable {
 		return direccion;
 	}
 
-	public List<Unidadnegocio> getUnidadnegocios() {
+	public List<UnidadNegocio> getUnidadnegocios() {
 		return this.unidadnegocios;
 	}
 
-	public void setUnidadnegocios(List<Unidadnegocio> unidadnegocios) {
+	public void setUnidadnegocios(List<UnidadNegocio> unidadnegocios) {
 		this.unidadnegocios = unidadnegocios;
 	}
 
-	public Unidadnegocio addUnidadnegocio(Unidadnegocio unidadnegocio) {
+	public UnidadNegocio addUnidadnegocio(UnidadNegocio unidadnegocio) {
 		getUnidadnegocios().add(unidadnegocio);
 		unidadnegocio.setInstitucion(this);
 
 		return unidadnegocio;
 	}
 
-	public Unidadnegocio removeUnidadnegocio(Unidadnegocio unidadnegocio) {
+	public UnidadNegocio removeUnidadnegocio(UnidadNegocio unidadnegocio) {
 		getUnidadnegocios().remove(unidadnegocio);
 		unidadnegocio.setInstitucion(null);
 
 		return unidadnegocio;
 	}
 
-	public List<Viceministerio> getViceministerios() {
+	public List<ViceMinisterio> getViceministerios() {
 		return this.viceministerios;
 	}
 
-	public void setViceministerios(List<Viceministerio> viceministerios) {
+	public void setViceministerios(List<ViceMinisterio> viceministerios) {
 		this.viceministerios = viceministerios;
 	}
 
-	public Viceministerio addViceministerio(Viceministerio viceministerio) {
+	public ViceMinisterio addViceministerio(ViceMinisterio viceministerio) {
 		getViceministerios().add(viceministerio);
 		viceministerio.setInstitucion(this);
 
 		return viceministerio;
 	}
 
-	public Viceministerio removeViceministerio(Viceministerio viceministerio) {
+	public ViceMinisterio removeViceministerio(ViceMinisterio viceministerio) {
 		getViceministerios().remove(viceministerio);
 		viceministerio.setInstitucion(null);
 

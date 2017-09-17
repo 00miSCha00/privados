@@ -27,11 +27,11 @@ public class Direccion implements Serializable {
 	//bi-directional many-to-one association to Viceministerio
 	@ManyToOne
 	@JoinColumn(name="idViceMinisterio")
-	private Viceministerio viceministerio;
+	private ViceMinisterio viceministerio;
 
 	//bi-directional many-to-one association to Unidadnegocio
 	@OneToMany(mappedBy="direccion")
-	private List<Unidadnegocio> unidadnegocios;
+	private List<UnidadNegocio> unidadnegocios;
 
 	public Direccion() {
 	}
@@ -60,30 +60,30 @@ public class Direccion implements Serializable {
 		this.institucion = institucion;
 	}
 
-	public Viceministerio getViceministerio() {
+	public ViceMinisterio getViceministerio() {
 		return this.viceministerio;
 	}
 
-	public void setViceministerio(Viceministerio viceministerio) {
+	public void setViceministerio(ViceMinisterio viceministerio) {
 		this.viceministerio = viceministerio;
 	}
 
-	public List<Unidadnegocio> getUnidadnegocios() {
+	public List<UnidadNegocio> getUnidadnegocios() {
 		return this.unidadnegocios;
 	}
 
-	public void setUnidadnegocios(List<Unidadnegocio> unidadnegocios) {
+	public void setUnidadnegocios(List<UnidadNegocio> unidadnegocios) {
 		this.unidadnegocios = unidadnegocios;
 	}
 
-	public Unidadnegocio addUnidadnegocio(Unidadnegocio unidadnegocio) {
+	public UnidadNegocio addUnidadnegocio(UnidadNegocio unidadnegocio) {
 		getUnidadnegocios().add(unidadnegocio);
 		unidadnegocio.setDireccion(this);
 
 		return unidadnegocio;
 	}
 
-	public Unidadnegocio removeUnidadnegocio(Unidadnegocio unidadnegocio) {
+	public UnidadNegocio removeUnidadnegocio(UnidadNegocio unidadnegocio) {
 		getUnidadnegocios().remove(unidadnegocio);
 		unidadnegocio.setDireccion(null);
 
