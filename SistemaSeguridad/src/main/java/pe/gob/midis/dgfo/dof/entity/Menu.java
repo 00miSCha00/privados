@@ -5,12 +5,8 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the menu database table.
- * 
- */
 @Entity
-@NamedQuery(name="Menu.findAll", query="SELECT m FROM Menu m")
+@Table(name="MENU")
 public class Menu implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,12 +15,10 @@ public class Menu implements Serializable {
 
 	private String descripcionMenu;
 
-	//bi-directional many-to-one association to Modulo
 	@ManyToOne
 	@JoinColumn(name="idModulo")
 	private Modulo modulo;
 
-	//bi-directional many-to-one association to Opcion
 	@OneToMany(mappedBy="menu")
 	private List<Opcion> opcions;
 

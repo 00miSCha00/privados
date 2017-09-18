@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Sistema.findAll", query="SELECT s FROM Sistema s")
+@Table(name="SISTEMA")
 public class Sistema implements Serializable {
 	private static final long serialVersionUID = 1L;
 

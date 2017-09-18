@@ -5,12 +5,8 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the opcion database table.
- * 
- */
 @Entity
-@NamedQuery(name="Opcion.findAll", query="SELECT o FROM Opcion o")
+@Table(name="OPCION")
 public class Opcion implements Serializable {
 	private static final long serialVersionUID = 1L;
 

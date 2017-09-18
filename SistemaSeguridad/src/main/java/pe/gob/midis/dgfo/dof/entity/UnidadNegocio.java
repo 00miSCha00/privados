@@ -5,12 +5,9 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the unidadnegocio database table.
- * 
- */
+
 @Entity
-@NamedQuery(name="Unidadnegocio.findAll", query="SELECT u FROM Unidadnegocio u")
+@Table(name="UNIDADNEGOCIO")
 public class UnidadNegocio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,16 +16,13 @@ public class UnidadNegocio implements Serializable {
 
 	private String descripcionUnidadNegocio;
 
-	//bi-directional many-to-one association to Personal
 	@OneToMany(mappedBy="unidadnegocio")
 	private List<Personal> personals;
 
-	//bi-directional many-to-one association to Direccion
 	@ManyToOne
 	@JoinColumn(name="idDireccion")
 	private Direccion direccion;
 
-	//bi-directional many-to-one association to Institucion
 	@ManyToOne
 	@JoinColumn(name="idInstitucion")
 	private Institucion institucion;

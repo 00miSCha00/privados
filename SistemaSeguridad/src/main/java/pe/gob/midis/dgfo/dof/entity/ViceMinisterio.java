@@ -5,12 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the viceministerio database table.
- * 
- */
 @Entity
-@NamedQuery(name="Viceministerio.findAll", query="SELECT v FROM Viceministerio v")
 public class ViceMinisterio implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,11 +14,9 @@ public class ViceMinisterio implements Serializable {
 
 	private String descripcionViceMinisterio;
 
-	//bi-directional many-to-one association to Direccion
 	@OneToMany(mappedBy="viceministerio")
 	private List<Direccion> direccions;
 
-	//bi-directional many-to-one association to Institucion
 	@ManyToOne
 	@JoinColumn(name="idInstitucion")
 	private Institucion institucion;

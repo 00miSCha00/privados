@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Perfil.findAll", query="SELECT p FROM Perfil p")
+@Table(name="Perfil")
 public class Perfil implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,12 +19,10 @@ public class Perfil implements Serializable {
 
 	private String descripcionPerfil;
 
-	//bi-directional many-to-one association to Sistema
 	@ManyToOne
 	@JoinColumn(name="idSistema")
 	private Sistema sistema;
 
-	//bi-directional many-to-one association to Usuario
 	@ManyToOne
 	@JoinColumn(name="idUsuario")
 	private Usuario usuario;

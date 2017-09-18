@@ -5,12 +5,8 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the institucion database table.
- * 
- */
 @Entity
-@NamedQuery(name="Institucion.findAll", query="SELECT i FROM Institucion i")
+@Table(name="INSTITUCION")
 public class Institucion implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -5,12 +5,8 @@ import javax.persistence.*;
 import java.util.List;
 
 
-/**
- * The persistent class for the direccion database table.
- * 
- */
-@Entity
-@NamedQuery(name="Direccion.findAll", query="SELECT d FROM Direccion d")
+@Entity(name="direccion")
+@Table(name="DIRECCION")
 public class Direccion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -19,17 +15,14 @@ public class Direccion implements Serializable {
 
 	private String descripcionDireccion;
 
-	//bi-directional many-to-one association to Institucion
 	@ManyToOne
 	@JoinColumn(name="idInstitucion")
 	private Institucion institucion;
 
-	//bi-directional many-to-one association to Viceministerio
 	@ManyToOne
 	@JoinColumn(name="idViceMinisterio")
 	private ViceMinisterio viceministerio;
 
-	//bi-directional many-to-one association to Unidadnegocio
 	@OneToMany(mappedBy="direccion")
 	private List<UnidadNegocio> unidadnegocios;
 
